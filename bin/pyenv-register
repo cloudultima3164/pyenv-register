@@ -96,7 +96,7 @@ else
       ;;
   esac
 
-  echo "export PATH="$HOME/.local/bin:$PATH"' >> "$sprofile"
+  echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$sprofile"
   
   . $sprofile
 
