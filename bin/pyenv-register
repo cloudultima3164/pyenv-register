@@ -97,6 +97,8 @@ else
   esac
 
   echo "export PATH="$HOME/.local/bin:$PATH"' >> "$sprofile"
+  
+  . $sprofile
 
   "$PYTHON" virtualenv.py -p "$PYTHON" $VIRTUALENV_OPTION "$DEST_DIR" || {
     exit 1
