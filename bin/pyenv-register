@@ -81,15 +81,9 @@ else
     exit 1
   fi
 
-  VIRTUALENV_URL=https://pypi.python.org/packages/source/v/virtualenv/virtualenv-1.11.4.tar.gz
-  echo "Download $VIRTUALENV_URL"
   cd "$TEMP_DIR"
-  eval (python -m pip install --user virtualenv) || {
+  $PYTHON -m pip install --user virtualenv || {
     echo "pyenv: Failed to download virtualenv" >&2
-    exit 1
-  }
-
-  tar xzf virtualenv.tgz --strip-components=1 || {
     exit 1
   }
 
