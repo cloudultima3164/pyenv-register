@@ -86,6 +86,17 @@ else
     echo "pyenv: Failed to download virtualenv" >&2
     exit 1
   }
+  
+  case ${SHELL##*/} in
+    zsh)
+      sprofile="$HOME/.zprofile"
+      ;;
+    bash)
+      sprofile="$HOME/.bash_profile"
+      ;;
+  esac
+
+  echo "export PATH="$HOME/.local/bin:$PATH"' >> "$sprofile"
 
   "$PYTHON" virtualenv.py -p "$PYTHON" $VIRTUALENV_OPTION "$DEST_DIR" || {
     exit 1
